@@ -18,16 +18,19 @@ if ! %w[ worker launch purge ].include?(ARGV.first)
 end
 
 sequel = Sequel.connect('mysql2://root@localhost/ruote_test')
+Ruote::Sequel.create_table(sequel)
+
 storage = Ruote::Sequel::Storage.new(sequel)
 
 if ARGV.first == 'worker'
 
-  class CleanCar < Ruote::Participant
+  class CleanCar < Ruote::StorageParticipant
     def on_workitem
+      super
       workitem.fields['counter'] = workitem.fields['counter'] + 1
       puts "* clean car #{workitem.fei.sid}"
       puts "  counter #{workitem.fields['counter']}"
-      reply
+      proceed(workitem)
     end
   end
 
@@ -54,8 +57,9 @@ else
   pdef =
     Ruote.define do
       set 'f:counter' => 0
-      repeat do
+      cursor do
         clean_car
+        rewind
       end
     end
 
