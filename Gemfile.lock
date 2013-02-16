@@ -1,3 +1,18 @@
+PATH
+  remote: ~/w/ruote
+  specs:
+    ruote (2.3.1)
+      blankslate (= 2.1.2.4)
+      parslet (= 1.4.0)
+      ruby_parser (~> 2.3)
+      rufus-cloche (>= 1.0.2)
+      rufus-dollar (>= 1.0.4)
+      rufus-json (>= 1.0.1)
+      rufus-mnemo (>= 1.2.2)
+      rufus-scheduler (>= 2.0.16)
+      rufus-treechecker (>= 1.0.8)
+      sourcify (= 0.5.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -21,17 +36,6 @@ GEM
       tzinfo (>= 0.3.23)
     rufus-treechecker (1.0.8)
       ruby_parser (>= 2.0.5)
-    ruote (2.3.0.2)
-      blankslate (= 2.1.2.4)
-      parslet (= 1.4.0)
-      ruby_parser (~> 2.3)
-      rufus-cloche (>= 1.0.2)
-      rufus-dollar (>= 1.0.4)
-      rufus-json (>= 1.0.1)
-      rufus-mnemo (>= 1.2.2)
-      rufus-scheduler (>= 2.0.16)
-      rufus-treechecker (>= 1.0.8)
-      sourcify (= 0.5.0)
     ruote-sequel (2.3.0)
       ruote (>= 2.3.0)
       sequel
@@ -51,7 +55,7 @@ PLATFORMS
 
 DEPENDENCIES
   mysql2
-  ruote
+  ruote!
   ruote-sequel
   sequel
   yajl-ruby
