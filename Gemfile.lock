@@ -13,6 +13,13 @@ PATH
       rufus-treechecker (>= 1.0.8)
       sourcify (= 0.5.0)
 
+PATH
+  remote: ~/w/ruote-sequel
+  specs:
+    ruote-sequel (2.3.1)
+      ruote (>= 2.3.1)
+      sequel
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -27,18 +34,15 @@ GEM
       sexp_processor (~> 3.0)
     ruby_parser (2.3.1)
       sexp_processor (~> 3.0)
-    rufus-cloche (1.0.2)
-      rufus-json (>= 1.0.1)
+    rufus-cloche (1.0.4)
+      rufus-json (>= 1.0.3)
     rufus-dollar (1.0.4)
-    rufus-json (1.0.2)
+    rufus-json (1.0.3)
     rufus-mnemo (1.2.3)
     rufus-scheduler (2.0.17)
       tzinfo (>= 0.3.23)
     rufus-treechecker (1.0.8)
       ruby_parser (>= 2.0.5)
-    ruote-sequel (2.3.0)
-      ruote (>= 2.3.0)
-      sequel
     sequel (3.44.0)
     sexp_processor (3.2.0)
     sourcify (0.5.0)
@@ -55,7 +59,8 @@ PLATFORMS
 
 DEPENDENCIES
   mysql2
+  rufus-cloche
   ruote!
-  ruote-sequel
+  ruote-sequel!
   sequel
   yajl-ruby

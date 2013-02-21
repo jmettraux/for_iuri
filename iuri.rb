@@ -1,4 +1,5 @@
 
+require 'logger'
 require 'rufus-json/automatic'
 require 'ruote'
 require 'ruote-sequel'
@@ -18,8 +19,22 @@ if ! %w[ worker launch purge ].include?(ARGV.first)
 end
 
 #sequel = Sequel.connect('mysql2://root@localhost/ruote_test')
+#logger = Logger.new("sequel_#{$$}.log")
+#logger.formatter =
+#  proc { |severity, t, progname, text|
+#    [
+#      "#{t.strftime('%H:%M:%S')}.#{sprintf('%06d', t.usec)}",
+#      "p#{$$}",
+#      severity,
+#      text,
+#      "\n"
+#    ].join(' ')
+#  }
+#sequel.loggers << logger
 #Ruote::Sequel.create_table(sequel)
 #storage = Ruote::Sequel::Storage.new(sequel)
+  #
+  #
 require 'ruote/storage/fs_storage'
 storage = Ruote::FsStorage.new('ruote_work')
 
